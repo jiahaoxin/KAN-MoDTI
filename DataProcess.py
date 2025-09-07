@@ -243,12 +243,3 @@ class process():
         return np.array(words, dtype=np.int32)
 
 
-# 主程序
-if __name__ == '__main__':
-    data_path = 'ki'
-    fasta_file = 'ki/data_ki_protein_sequences.fasta'
-    # 生成蛋白质 QSO 和 CTD 特征（保持蛋白质侧特征不变）
-    QSO_CTD_feature(fasta_file, data_path=data_path + '/bindingdb.txt',
-                    maxlag=30, output_name=data_path + '/QSOCTD.tsv')
-    # process() 使用过滤后的数据文件，生成的 features.npy 包含蛋白质 n-gram、QSO+CTD、药物 SMILES 序列、药物图特征和标签
-    process(os.path.splitext(data_path + '/bindingdb.txt')[0] + "_filtered.txt")
