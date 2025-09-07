@@ -103,8 +103,7 @@ def QSO_CTD_feature(fasta_file, data_path, maxlag, output_name):
     print('Starting to process QSO and CTD features, this may take minutes even hours to finish...')
     if not os.path.exists(output_name):
         
-        from iFeature.codes.QSOrder import QSOrder, readFasta as readFastaQSOrder, saveCode as saveCodeQSOrder
-        from iFeature.codes.CTDCClass import CTDCClass, readFasta as readFastaCTDC, saveCode as saveCodeCTDC
+        
         
         fastas = readFastaQSOrder.readFasta(fasta_file)
         
